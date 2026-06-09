@@ -62,6 +62,11 @@ app.get('/api/forecast/:municipioCode', async (req, res) => {
     }
 });
 
+// Fallback SPA: servir index.html para cualquier ruta que no sea API
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 app.listen(PORT, () => {
     console.log(`Servidor AEMET corriendo en http://localhost:${PORT}`);
     console.log('Abre http://localhost:3000 en tu navegador');

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteorología Zaragoza</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="cloud-layer" aria-hidden="true"></div>
+    <div class="container">
+        <header class="header">
+            <div class="header-left">
+                <h1>🌤 Meteorología Zaragoza</h1>
+                <p class="subtitle">Datos actuales y previsión de 5 días · Estación AEMET</p>
+            </div>
+            <div class="header-right">
+                <div class="header-sun-times" id="headerSunTimesContainer">
+                    <div class="header-sun-item">
+                        <span class="header-sun-label">🌅 Salida</span>
+                        <span class="header-sun-value" id="headerSunriseTime">--</span>
+                    </div>
+                    <div class="header-sun-item header-sun-secondary">
+                        <span class="header-sun-label-small">Dawn</span>
+                        <span class="header-sun-value-small" id="headerDawnTime">--</span>
+                    </div>
+                    <div class="header-sun-item">
+                        <span class="header-sun-label">🌇 Puesta</span>
+                        <span class="header-sun-value" id="headerSunsetTime">--</span>
+                    </div>
+                    <div class="header-sun-item header-sun-secondary">
+                        <span class="header-sun-label-small">Dusk</span>
+                        <span class="header-sun-value-small" id="headerDuskTime">--</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Sección de datos actuales -->
+            <section class="current-weather" id="currentWeather">
+                <div class="current-header">
+                    <h2>🌡 Condiciones Actuales</h2>
+                    <span class="current-date" id="currentDate"></span>
+                </div>
+                <div class="weather-grid" id="weatherGrid">
+                    <div class="skeleton"></div>
+                    <div class="skeleton"></div>
+                    <div class="skeleton"></div>
+                    <div class="skeleton"></div>
+                    <div class="skeleton"></div>
+                    <div class="skeleton"></div>
+                </div>
+                <h2>📊 Datos últimas 24h</h2>
+                <div class="extremes" id="extremesContainer">
+                    <div class="extreme-item">
+                        <span class="extreme-label">🌡️ Máx del día</span>
+                        <span class="extreme-value" id="maxTemp">--</span>
+                        <span class="extreme-time" id="maxTempTime"></span>
+                    </div>
+                    <div class="extreme-item">
+                        <span class="extreme-label">❄️ Mín del día</span>
+                        <span class="extreme-value" id="minTemp">--</span>
+                        <span class="extreme-time" id="minTempTime"></span>
+                    </div>
+                    <div class="extreme-item">
+                        <span class="extreme-label">💨 Racha máxima</span>
+                        <span class="extreme-value" id="maxWind">--</span>
+                        <span class="extreme-time" id="maxWindTime"></span>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Sección de previsión -->
+            <section class="forecast" id="forecastSection">
+                <h2>🗓 Previsión 5 Días</h2>
+                <div class="forecast-grid" id="forecastGrid">
+                    <div class="skeleton"></div>
+                    <div class="skeleton"></div>
+                    <div class="skeleton"></div>
+                    <div class="skeleton"></div>
+                    <div class="skeleton"></div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Botón de actualización -->
+        <div class="actions">
+            <button id="refreshBtn" class="btn-refresh">↻ Actualizar datos</button>
+            <span class="last-update" id="lastUpdate">Nunca actualizado</span>
+        </div>
+
+        <!-- Modal de alerta/error -->
+        <div class="modal" id="alertModal">
+            <div class="modal-content">
+                <h3 id="alertTitle">Información</h3>
+                <p id="alertMessage">Mensaje</p>
+                <button class="btn-close" id="alertCloseBtn">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/mock-data.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/ui.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

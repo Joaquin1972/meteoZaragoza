@@ -1,0 +1,14 @@
+{
+  "name": "meteorologia-zaragoza",
+  "version": "1.0.0",
+  "description": "App web de meteorología de Zaragoza con datos de AEMET (proxy opcional)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.0"
+  }
+}
